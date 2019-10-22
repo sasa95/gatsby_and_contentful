@@ -29,6 +29,15 @@ const Header = () => {
           </li>
           <li>
             <Link
+              to="/portfolio"
+              className={navItem}
+              activeClassName={activeNavItem}
+            >
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/blog"
               className={navItem}
               activeClassName={activeNavItem}

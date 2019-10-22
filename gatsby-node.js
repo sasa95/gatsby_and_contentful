@@ -1,4 +1,5 @@
 const path = require('path')
+const portfolioData = require('./src/data/portfolio.json')
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -22,6 +23,22 @@ module.exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: edge.node.slug,
       },
+    })
+  })
+}
+
+module.exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const template = path.resolve('./src/templates/portfolio-item.js')
+
+  portfolioData.forEach(item => {
+    const path = item.name
+
+    createPage({
+      path,
+      component: template,
+      context: item,
     })
   })
 }

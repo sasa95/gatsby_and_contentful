@@ -25,19 +25,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-}
 
-module.exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const template = path.resolve('./src/templates/portfolio-item.js')
+  const porfolioItemTemplate = path.resolve('./src/templates/portfolio-item.js')
 
   portfolioData.forEach(item => {
     const path = item.name
 
     createPage({
       path,
-      component: template,
+      component: porfolioItemTemplate,
       context: item,
     })
   })

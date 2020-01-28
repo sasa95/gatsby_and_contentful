@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Care by Kreativ`,
+    title: `Care by Kreativ xxx`,
     author: `Sasa Drmic`,
   },
   plugins: [
